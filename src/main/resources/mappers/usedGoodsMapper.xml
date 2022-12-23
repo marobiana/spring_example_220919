@@ -9,4 +9,5 @@
 		FROM
 			`used_goods`
 	</select>
+	
 </mapper>
