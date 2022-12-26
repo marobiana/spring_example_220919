@@ -18,6 +18,52 @@
 		WHERE
 			`id` = #{id}
 	</select>
+	
+	<insert id="insertReview" parameterType="com.example.lesson03.model.Review">
+		INSERT INTO `new_review`
+		(
+			`storeId`
+			,`menu`
+			,`userName`
+			,`point`
+			,`review`
+			,`createdAt`
+			,`updatedAt`
+		)
+		VALUES
+		(
+			#{storeId}
+			, #{menu}
+			, #{userName}
+			, #{point}
+			, #{review}
+			, NOW()
+			, NOW()
+		)
+	</insert>
+	
+	<insert id="insertReviewAsField" parameterType="map">
+		INSERT INTO `new_review`
+		(
+			`storeId`
+			,`menu`
+			,`userName`
+			,`point`
+			,`review`
+			,`createdAt`
+			,`updatedAt`
+		)
+		VALUES
+		(
+			#{storeId}
+			, #{menu}
+			, #{userName}
+			, #{point}
+			, #{review}
+			, NOW()
+			, NOW()
+		)
+	</insert>
 </mapper>
 
 
